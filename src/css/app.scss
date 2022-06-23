@@ -1,1 +1,86 @@
-// app global css in SCSS form
+// https://stackoverflow.com/questions/62883931/how-to-merge-several-classes-in-one
+
+// $
+
+@import "../../node_modules/quasar/src/css/flex-addon.sass";
+@import "../../node_modules/quasar/src/css/variables.sass";
+@import '../../node_modules/quasar/src/css/core/animations.sass';
+@import '../../node_modules/quasar/src/css/core/colors.sass';
+@import '../../node_modules/quasar/src/css/core/elevation.sass';
+@import '../../node_modules/quasar/src/css/core/flex.sass';
+@import '../../node_modules/quasar/src/css/core/helpers.sass';
+@import '../../node_modules/quasar/src/css/core/mouse.sass';
+@import '../../node_modules/quasar/src/css/core/orientation.sass';
+@import '../../node_modules/quasar/src/css/core/positioning.sass';
+@import '../../node_modules/quasar/src/css/core/size.sass';
+@import '../../node_modules/quasar/src/css/core/touch.sass';
+@import '../../node_modules/quasar/src/css/core/transitions.sass';
+@import '../../node_modules/quasar/src/css/core/typography.sass';
+@import '../../node_modules/quasar/src/css/core/visibility.sass';
+@import '../../node_modules/quasar/src/css/core/dark.sass';
+
+
+
+.between-center {
+  @extend .justify-between;
+  @extend .self-center;
+}
+
+// Class type row occpuies the full width of the screen
+.row-height {
+  @extend .row;
+  @extend .window-height;
+}
+
+.row-center {
+  @extend .row;
+  @extend .self-center;
+}
+
+$iconsize : (24,32,48,56,64,76,96,128,256);
+
+@each $size in $iconsize {
+  .q-size-#{$size} {
+    width: #{$size}px;
+    height: #{$size}px;
+  }
+}
+
+.required .q-field__label:before {
+  content: '* ';
+  color: #f00;
+}
+
+.q-custon-input.q-field--float .q-field__label {
+  transform: translateY(-120%) translateX(-5px) scale(0.75);
+  background: #fff;
+  right: inherit;
+  padding: 0 5px;
+  z-index: 10;
+}
+
+.q-custon-input.q-field--dense.q-field--float .q-field__label {
+    transform: translateY(-85%) translateX(-5px) scale(0.75);
+}
+
+.q-custon-input.q-field--labeled .q-field__native,
+.q-custon-input.q-field--labeled .q-field__prefix,
+.q-custon-input.q-field--labeled .q-field__suffix {
+  padding-top: 8px;
+}
+
+.q-field–outlined .q-field__control {
+  border: 15px solid $primary !important
+  }
+
+.p-1x2{
+  padding: 20px 40px;
+}
+
+@each $size-str,$size in $sizes {
+  @media screen and (min-width: $size) {
+    .p-1x2{
+      padding: 40px 80px;
+    }
+  }
+}

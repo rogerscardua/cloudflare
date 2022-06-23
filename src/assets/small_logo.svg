@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="56"
+   height="56"
+   viewBox="0 0 14.816665 14.816665"
+   version="1.1"
+   id="svg62"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="small_logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview64"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="2.3786088"
+     inkscape:cx="-92.911453"
+     inkscape:cy="15.975725"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs59" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#4444ff;fill-opacity:1;stroke-width:0.581875;stroke-linecap:round;stroke-linejoin:round"
+       id="rect118"
+       width="14.816665"
+       height="14.816665"
+       x="1.5213013e-07"
+       y="1.5213013e-07"
+       ry="1.5850912" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.518px;line-height:1.25;font-family:Jokerman;-inkscape-font-specification:'Jokerman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e6e6e6;stroke:#ffffff;stroke-width:0.28795"
+       x="3.3946691"
+       y="12.620243"
+       id="text226"
+       transform="scale(1.0586235,0.94462289)"><tspan
+         sodipodi:role="line"
+         id="tspan224"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.518px;font-family:Jokerman;-inkscape-font-specification:'Jokerman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e6e6e6;stroke:#ffffff;stroke-width:0.28795"
+         x="3.3946691"
+         y="12.620243">L</tspan></text>
+  </g>
+</svg>
