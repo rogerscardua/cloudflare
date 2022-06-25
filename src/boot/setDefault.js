@@ -34,3 +34,8 @@ QBtn.props.dense = {
   type: QBtn.props.dense,
   default: false
 }
+
+QBtn.props.rounded = {
+  type: QBtn.props.rounded,
+  default: false
+}
