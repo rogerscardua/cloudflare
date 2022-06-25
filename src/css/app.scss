@@ -19,7 +19,20 @@
 @import '../../node_modules/quasar/src/css/core/visibility.sass';
 @import '../../node_modules/quasar/src/css/core/dark.sass';
 
-
+// responsive 3 colunas
+.r-3-col
+{
+ @extend .col-md-4;
+ @extend .col-xs-12;
+ @extend .col-xs-12;
+}
+// responsive 4 colunas
+.r-4-col
+{
+ @extend .col-md-3;
+ @extend .col-xs-12;
+ @extend .col-xs-12;
+}
 
 .between-center {
   @extend .justify-between;
