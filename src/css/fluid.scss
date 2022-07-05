@@ -1,4 +1,110 @@
 // fluid css font
+/// Power function
+/// @param {Number} $x
+/// @param {Number} $n
+/// @return {Number}
+@function pow($x, $n) {
+  $ret: 1;
+
+  @if $n >= 0 {
+    @for $i from 1 through $n {
+      $ret: $ret * $x;
+    }
+  } @else {
+    @for $i from $n to 0 {
+      $ret: $ret / $x;
+    }
+  }
+
+  @return $ret;
+}
+
+/// toFixed() function in Sass
+/// @author Kitty Giraudel
+/// @param {Number} $float - Number to format
+/// @param {Number} $digits [2] - Number of digits to leave
+/// @return {Number}
+@function to-fixed($float, $digits: 2) {
+  $sass-precision: 5;
+
+  @if $digits > $sass-precision {
+    @warn "Sass sets default precision to #{$sass-precision} digits, and there is no way to change that for now."
+    + "The returned number will have #{$sass-precision} digits, even if you asked for `#{$digits}`."
+    + "See https://github.com/sass/sass/issues/1122 for further informations.";
+  }
+
+  $pow: pow(10, $digits);
+  @return round($float * $pow) / $pow;
+}
+
+@function betterClamp($minSize, $maxSize, $minWidth: 320, $maxWidth: 1400) {
+// convert to rem
+$minSize: $minSize / 16 ;
+$maxSize: $maxSize / 16 ;
+$maxWidth : $maxWidth / 16;
+$minWidth : $minWidth / 16;
+// do calculations
+// const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
+// const yAxisIntersection = -minWidth * slope + minFontSize;
+
+//  const clampFunc = `font-size: clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(
+//    4
+//  )}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize}rem);`;
+
+
+$slope: to-fixed(($maxSize - $minSize) / ($maxWidth - $minWidth),5);
+$yAxisIntersection: to-fixed(-$minWidth * $slope + $minSize,5);
+$preferredValue: #{$yAxisIntersection * 1rem} '+' #{$slope * 100vw};
+// output as rem
+$minSize: $minSize * 1rem;
+$maxSize: $maxSize * 1rem;
+@return clamp(#{$minSize}, #{$preferredValue}, #{$maxSize});
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400');
+
+html {font-size: 100%;} /*16px*/
+
+body {
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+}
+
+p {margin-bottom: 1rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: 1rem 0 1.38rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: clamp(1rem, 0.4074rem + 2.9630vw, 3rem);
+}
+
+// h2 {font-size: 2.074rem;}
+
+h2 {font-size:betterClamp(16,48); }
+
+h3 {font-size: 1.728rem;}
+
+h4 {font-size: 1.44rem;}
+
+h5 {font-size: 1.2rem;}
+
+small, .text_small {font-size: 0.833rem;}
+
+// @media screen and (min-width: 1400px) {
+//  html { font-size: 125%; } /*20px*/
+// }
+
+
+
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);

@@ -19,20 +19,63 @@
 @import '../../node_modules/quasar/src/css/core/visibility.sass';
 @import '../../node_modules/quasar/src/css/core/dark.sass';
 
+// responsive 2 colunas
+.n.r-col-1\/2
+{
+ @extend .col-md-6;
+ @extend .col-xs-12;
+}
 // responsive 3 colunas
-.r-3-col
+.r-3-cols
 {
  @extend .col-md-4;
- @extend .col-xs-12;
+ @extend .col-sm-6;
  @extend .col-xs-12;
 }
 // responsive 4 colunas
-.r-4-col
+.r-4-cols
 {
  @extend .col-md-3;
- @extend .col-xs-12;
+ @extend .col-sm-6;
  @extend .col-xs-12;
 }
+
+
+@mixin basic-grid {
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fill,
+      minmax(clamp(clamp(clamp(
+            100%/(var(--n) + 1) + 0.1%,
+              (var(--w1) - 100%)*1000,
+            100%/(var(--m) + 1) + 0.1%),
+              (var(--w2) - 100%)*1000,
+            100%/(var(--p) + 1) + 0.1%),
+              (var(--w3) - 100%)*1000,
+            100%), 1fr));
+}
+
+.n-container-grid {
+  /* first breakpoint*/
+  --w1:1200px;
+  --n:4;
+  /* second breakpoint*/
+  --w2:800px;
+  --m:2;
+  /* third breakpoint*/
+  --w3:400px;
+  --p:1;
+  @include basic-grid;
+}
+
+.r-fs-h1 { font-size : calc(48px + 0.390625vw);}
+.r-fs-h2 { font-size : calc(36px + 0.390625vw);}
+.r-fs-h3 { font-size : calc(28px + 0.390625vw);}
+.r-fs-h4 { font-size : calc(24px + 0.390625vw);}
+.r-fs-h5 { font-size : calc(20px + 0.390625vw);}
+.r-fs-h6 { font-size : calc(18px + 0.390625vw);}
+
+.r-fs-body .r-fs-text { font-size : calc(16px + 0.390625vw);}
 
 .between-center {
   @extend .justify-between;

@@ -18,6 +18,7 @@ interface IItemList {
 
 const props = defineProps<{
   header: string
+  headerClass?:string
   class?: string
   listItems: Array<IItemList>
 }>()
